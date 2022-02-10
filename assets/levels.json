@@ -1,0 +1,64 @@
+{
+  "levels": [
+    {"name": "level1",
+      "id": 1,
+      "platforms":
+      [
+        {
+          "x": 20,
+          "y": 30,
+          "w": 200,
+          "h": 20,
+          "color": "red"
+        },
+
+        {
+          "x": 30,
+          "y": 60,
+          "w": 200,
+          "h": 20,
+          "color": "blue"
+        }
+      ],
+      "nasties": [
+        {
+
+          "type": "bad"
+        },
+        {
+          "type": "walker"
+        }
+      ]
+    },
+    {"name": "level2",
+      "id": 2,
+      "platforms":
+      [
+        {
+          "x": 20,
+          "y": 30,
+          "w": 200,
+          "h": 20,
+          "color": "red"
+        },
+
+        {
+          "x": 30,
+          "y": 60,
+          "w": 200,
+          "h": 20,
+          "color": "blue"
+        }
+      ],
+      "nasties": [
+        {
+
+          "type": "bad"
+        },
+        {
+          "type": "walker"
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,17 @@
+package game;
+
+import game.Game;
+
 public class GameLoop implements Runnable{
     private Game g;
     private boolean running;
-    private final double refreshRate = 1.0/60.0d;
+    private final double refreshRate = 1.0/0.25d;
     private long nextStatTime;
     private int fps, ups;
 
     public GameLoop(Game game){
         this.g = game;
     }
-
     @Override
     public void run(){
         running = true;

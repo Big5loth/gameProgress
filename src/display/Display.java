@@ -1,18 +1,27 @@
+package display;
+
+import game.Game;
+import input.Input;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Display extends JFrame {
     private Canvas c;
-    public Display(int width, int height){
+    private Renderer renderer;
+    public Display(int width, int height, Input input){
     setTitle("Taistealaí");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setResizable(false);
+
+    this.renderer = new Renderer();
 
     c = new Canvas();
     c.setPreferredSize(new Dimension(width, height));
     c.setFocusable(false);
     add(c);
+    addKeyListener(input);
     pack();
 
     c.createBufferStrategy(3);
@@ -27,14 +36,7 @@ public class Display extends JFrame {
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0,0, c.getWidth(), c.getHeight());
 
-        Rectangle rectangle = g.getRectangle();
-        graphics.setColor(Color.BLUE);
-        graphics.fillRect(
-                (int) rectangle.getX(),
-                (int) rectangle.getY(),
-                (int) rectangle.getWidth(),
-                (int) rectangle.getHeight()
-        );
+        renderer.render(g,graphics);
 
         graphics.dispose();
         bufferStrategy.show();
